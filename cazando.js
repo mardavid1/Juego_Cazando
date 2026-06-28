@@ -15,11 +15,11 @@ const ALTO_COMIDA = 20;
 const ANCHO_COMIDA = 20;
 
 function iniciarJuego() {
-    // Centrar el gato en el canvas
+    // Centrar GATO
     gatoX = (canvas.width - ANCHO_GATO) / 2;
     gatoY = (canvas.height - ALTO_GATO) / 2;
 
-    // Colocar la comida en la esquina inferior derecha
+    // Colocar comida esquina inferior derecha
     comidaX = canvas.width - ANCHO_COMIDA;
     comidaY = canvas.height - ALTO_COMIDA;
 
@@ -28,13 +28,18 @@ function iniciarJuego() {
 }
 
 function graficarGato() {
-    cxt.fillStyle = 'brown';
-    cxt.fillRect(gatoX, gatoY, ANCHO_GATO, ALTO_GATO);
+    graficarRectangulo(gatoX, gatoY, ANCHO_GATO, ALTO_GATO, 'brown');
 }
 
 function graficarComida() {
-    cxt.fillStyle = 'blue';
-    cxt.fillRect(comidaX, comidaY, ANCHO_COMIDA, ALTO_COMIDA);
+    graficarRectangulo(comidaX, comidaY, ANCHO_COMIDA, ALTO_COMIDA, 'blue');
+}
+
+
+function graficarRectangulo(x,y,ancho,alto,color){
+    cxt.fillStyle=color;
+    cxt.fillRect(x,y,ancho,alto);
+
 }
 
 
