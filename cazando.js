@@ -15,20 +15,7 @@ const ALTO_COMIDA = 20;
 const ANCHO_COMIDA = 20;
 
 function iniciarJuego() {
-    // Centrar GATO
-    gatoX = (canvas.width - ANCHO_GATO) / 2;
-    gatoY = (canvas.height - ALTO_GATO) / 2;
-
-    // Colocar comida esquina inferior derecha
-    comidaX = canvas.width - ANCHO_COMIDA;
-    comidaY = canvas.height - ALTO_COMIDA;
-    //mostrar tiempo inicial
-    mostrarEnSpan("tiempo", tiempo);
-
-    graficarGato();
-    graficarComida();
-    // Ejecutar restarTiempo cada 1 segundo
-    intervaloTiempo = setInterval(restarTiempo, 1000);
+    reiniciarJuego();
 }
 
 function graficarGato() {
@@ -148,6 +135,29 @@ function restarTiempo() {
 }
 
 let juegoTerminado = false; // Juego terminado
+
+function reiniciarJuego() {
+    clearInterval(intervaloTiempo);
+
+    puntaje = 0;
+    tiempo = 10;
+    juegoTerminado = false;
+
+    gatoX = (canvas.width - ANCHO_GATO) / 2;
+    gatoY = (canvas.height - ALTO_GATO) / 2;
+
+    comidaX = canvas.width - ANCHO_COMIDA;
+    comidaY = canvas.height - ALTO_COMIDA;
+
+    mostrarEnSpan("puntos", puntaje);
+    mostrarEnSpan("tiempo", tiempo);
+
+    limpiarCanva();
+    graficarGato();
+    graficarComida();
+
+    intervaloTiempo = setInterval(restarTiempo, 1000);
+}
 
 
 
