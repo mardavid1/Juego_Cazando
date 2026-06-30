@@ -94,11 +94,20 @@ function detectarColision() {
         gatoY < comidaY + ALTO_COMIDA &&
         gatoY + ALTO_GATO > comidaY
     ) {
-        alert("¡El gato atrapó la comida!");
+        //alert("¡El gato atrapó la comida!");
+
+        moverComidaAleatoria();
+
+        limpiarCanva();
+        graficarGato();
+        graficarComida();
     }
 }
 
-
+function moverComidaAleatoria() {
+    comidaX = Math.floor(Math.random() * (canvas.width - ANCHO_COMIDA));
+    comidaY = Math.floor(Math.random() * (canvas.height - ALTO_COMIDA));
+}
 
 
 
