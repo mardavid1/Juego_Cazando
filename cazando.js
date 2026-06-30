@@ -99,13 +99,19 @@ function detectarColision() {
         gatoY + ALTO_GATO > comidaY
     ) {
         puntaje = puntaje + 1;
-        actualizarPuntaje();
+        mostrarEnSpan("puntos", puntaje);
 
-        moverComidaAleatoria();
+        if (puntaje == 6) {
+            alert("¡Ganaste!");
+            clearInterval(intervaloTiempo);
+            juegoTerminado = true;
+        } else {
+            moverComidaAleatoria();
 
-        limpiarCanva();
-        graficarGato();
-        graficarComida();
+            limpiarCanva();
+            graficarGato();
+            graficarComida();
+        }
     }
 }
 
@@ -119,21 +125,29 @@ function mostrarEnSpan(id, valor) {
     componente.textContent = valor;
 }
 
-let puntaje=0;
+let puntaje=0; //Variable puntaje
 
 function actualizarPuntaje() {
     mostrarEnSpan("puntos", puntaje);
 }
 
-let tiempo = 10;
-let intervaloTiempo;
+let tiempo = 10; //Variable tiempo
+let intervaloTiempo; // Variable intervalo
 
 function restarTiempo() {
     if (tiempo > 0) {
         tiempo = tiempo - 1;
         mostrarEnSpan("tiempo", tiempo);
     }
+
+    if (tiempo == 0) {
+        alert("Game Over");
+        clearInterval(intervaloTiempo);
+        juegoTerminado = true;
+    }
 }
+
+let juegoTerminado = false; // Juego terminado
 
 
 
