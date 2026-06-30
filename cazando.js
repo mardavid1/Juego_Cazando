@@ -94,7 +94,8 @@ function detectarColision() {
         gatoY < comidaY + ALTO_COMIDA &&
         gatoY + ALTO_GATO > comidaY
     ) {
-        //alert("¡El gato atrapó la comida!");
+        puntaje = puntaje + 1;
+        actualizarPuntaje();
 
         moverComidaAleatoria();
 
@@ -107,6 +108,17 @@ function detectarColision() {
 function moverComidaAleatoria() {
     comidaX = Math.floor(Math.random() * (canvas.width - ANCHO_COMIDA));
     comidaY = Math.floor(Math.random() * (canvas.height - ALTO_COMIDA));
+}
+
+function mostrarEnSpan(id, valor) {
+    let componente = document.getElementById(id);
+    componente.textContent = valor;
+}
+
+let puntaje=0;
+
+function actualizarPuntaje() {
+    mostrarEnSpan("puntos", puntaje);
 }
 
 
