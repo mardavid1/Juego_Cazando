@@ -22,9 +22,13 @@ function iniciarJuego() {
     // Colocar comida esquina inferior derecha
     comidaX = canvas.width - ANCHO_COMIDA;
     comidaY = canvas.height - ALTO_COMIDA;
+    //mostrar tiempo inicial
+    mostrarEnSpan("tiempo", tiempo);
 
     graficarGato();
     graficarComida();
+    // Ejecutar restarTiempo cada 1 segundo
+    intervaloTiempo = setInterval(restarTiempo, 1000);
 }
 
 function graficarGato() {
@@ -121,7 +125,15 @@ function actualizarPuntaje() {
     mostrarEnSpan("puntos", puntaje);
 }
 
+let tiempo = 10;
+let intervaloTiempo;
 
+function restarTiempo() {
+    if (tiempo > 0) {
+        tiempo = tiempo - 1;
+        mostrarEnSpan("tiempo", tiempo);
+    }
+}
 
 
 
