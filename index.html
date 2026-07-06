@@ -1,33 +1,69 @@
 <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<html>
-  <head>
-    <title>Juego Cazando</title>
-    <link rel="stylesheet" href="cazando.css"/>
-    
-  </head>
-  
-  <body onload="iniciarJuego()">
-    <script src="utilitarios.js"></script>
-    <h1>Juego Cazando</h1>
-    <p>Autor: Marco</p>
-    <canvas id="areaJuego" width="500" height="500"></canvas>
-    
-    <div class="controles">
-      <button onclick="moverArriba()">⬆</button>
-      <br>
-      <button onclick="moverIzquierda()">⬅</button>
-      <button onclick="moverAbajo()">⬇</button>
-      <button onclick="moverDerecha()">➡</button>
-      <br><br>
-      <button onclick="reiniciarJuego()">REINICIAR</button>
-    </div>
-    
-    <div class="panel">
-      <span>Puntos: <span id="puntos">0</span></span>
-      <span>Tiempo: <span id="tiempo">10</span></span>
-    </div>
-    <p id="mensaje"></p>
-  </body>
+  <title>Juego Cazando</title>
+  <link rel="stylesheet" href="cazando.css" />
+</head>
+
+<body onload="iniciarJuego()">
+  <main class="contenedor">
+
+    <section class="tarjeta-juego">
+
+      <div class="logo-juego">
+        <img src="leo-messi.jpg" alt="Logo del juego" />
+      </div>
+
+      <header class="encabezado">
+        <p class="etiqueta">Mini juego</p>
+        <h1>⚽ Juego Cazando</h1>
+        <p class="descripcion">
+          Mueve al jugador, atrapa el objetivo y suma la mayor cantidad de puntos antes de que termine el tiempo.
+        </p>
+      </header>
+
+      <section class="panel">
+        <div class="dato">
+          <span class="dato-titulo">Puntos</span>
+          <span id="puntos" class="dato-numero">0</span>
+        </div>
+
+        <div class="dato">
+          <span class="dato-titulo">Tiempo</span>
+          <span id="tiempo" class="dato-numero">10</span>
+        </div>
+      </section>
+
+      <div class="canvas-contenedor">
+        <canvas id="areaJuego" width="500" height="500"></canvas>
+      </div>
+
+      <section class="controles">
+        <div class="fila-control">
+          <button onclick="moverArriba()">⬆</button>
+        </div>
+
+        <div class="fila-control">
+          <button onclick="moverIzquierda()">⬅</button>
+          <button onclick="moverAbajo()">⬇</button>
+          <button onclick="moverDerecha()">➡</button>
+        </div>
+
+        <button class="boton-reiniciar" onclick="reiniciarJuego()">REINICIAR</button>
+      </section>
+
+      <p id="mensaje"></p>
+
+      <p class="autor">Autor: Marco</p>
+
+    </section>
+
+  </main>
+
+  <script src="utilitarios.js"></script>
   <script src="cazando.js"></script>
-  </html>
+</body>
+</html>
