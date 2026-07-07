@@ -7,10 +7,15 @@ body {
   min-height: 100vh;
   font-family: Arial, Helvetica, sans-serif;
   color: #ffffff;
-  background:
-    radial-gradient(circle at top left, rgba(37, 99, 235, 0.35), transparent 35%),
-    radial-gradient(circle at bottom right, rgba(220, 38, 38, 0.35), transparent 35%),
-    linear-gradient(135deg, #020617, #111827, #172554);
+
+  background-image:
+    linear-gradient(rgba(2, 6, 23, 0.82), rgba(15, 23, 42, 0.88)),
+    url("https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1600&q=80");
+
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -93,7 +98,7 @@ h1 {
 }
 
 .descripcion {
-  max-width: 600px;
+  max-width: 640px;
   margin: 12px auto 0;
   color: #cbd5e1;
   font-size: 17px;
@@ -239,6 +244,7 @@ button:active {
 @media (max-width: 640px) {
   body {
     padding: 16px;
+    background-attachment: scroll;
   }
 
   .tarjeta-juego {
