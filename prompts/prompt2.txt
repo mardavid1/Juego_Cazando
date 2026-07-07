@@ -1,0 +1,42 @@
+PROMPT INICIAL - PARTE 2:
+
+Actúa como un diseñador web experto en interfaces de videojuegos.
+Necesito mejorar la segunda parte del proyecto Juego Cazando agregando imágenes y un fondo visual.
+
+Reglas importantes:
+- Solo se deben modificar archivos HTML y CSS.
+- No se debe modificar el archivo JavaScript.
+- El proyecto debe incluir imágenes.
+- El fondo de la página debe ser una imagen obtenida de internet.
+- Se debe mantener el funcionamiento actual del juego.
+- El diseño debe verse moderno, atractivo y relacionado con videojuegos.
+- El fondo debe tener una capa oscura o filtro para que el contenido sea legible.
+- El logo o avatar debe mostrarse correctamente.
+- Los botones, el canvas y el panel de información deben seguir siendo claros y fáciles de usar.
+
+Genera el código necesario para HTML y CSS, sin modificar JavaScript.
+
+
+PROMPT DE SEGUIMIENTO 1:
+
+Agrega una imagen de fondo desde internet usando CSS.
+Combina la imagen con un filtro oscuro mediante linear-gradient para que el texto y el canvas se puedan ver bien.
+
+
+PROMPT DE SEGUIMIENTO 2:
+
+Mejora el uso de imágenes dentro del proyecto.
+Incluye un logo o avatar circular en la interfaz y asegúrate de que se vea bien con bordes redondeados y sombra.
+
+
+PROMPT DE SEGUIMIENTO 3:
+
+Revisa que la página cumpla con los requisitos del taller:
+- Mejoras visuales usando IA.
+- Modificación únicamente de HTML y CSS.
+- Carpeta prompts.
+- Archivo prompt1.txt con historial de prompts de la parte 1.
+- Archivo prompt2.txt con historial de prompts de la parte 2.
+- Imágenes agregadas.
+- Fondo con imagen de internet.
+- Commit, push y despliegue en Vercel.

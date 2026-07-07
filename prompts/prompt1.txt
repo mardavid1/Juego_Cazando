@@ -1,0 +1,35 @@
+PROMPT INICIAL - PARTE 1:
+
+Actúa como un diseñador web y desarrollador frontend experto en HTML y CSS.
+Necesito mejorar la interfaz gráfica de mi juego llamado Juego Cazando.
+
+Reglas importantes:
+- Solo puedes modificar los archivos HTML y CSS.
+- No debes modificar el archivo JavaScript.
+- El juego ya tiene su lógica programada en JavaScript, por lo tanto el diseño debe adaptarse al funcionamiento existente.
+- La interfaz debe verse más moderna, ordenada y atractiva.
+- Agrega un contenedor principal para el juego.
+- Mejora el título, el canvas, los botones y la información del juego.
+- Usa colores llamativos, bordes redondeados, sombras y efectos hover.
+- El diseño debe ser responsive para que se vea bien en computadora y celular.
+- Mantén conectados correctamente los archivos HTML, CSS y JavaScript.
+
+Genera el código HTML y CSS necesario, separado y listo para copiar y pegar.
+
+
+PROMPT DE SEGUIMIENTO 1:
+
+Mejora el diseño para que tenga estilo de videojuego.
+Agrega una tarjeta principal con efecto glassmorphism, botones modernos, sombras, bordes redondeados y mejor distribución visual.
+
+
+PROMPT DE SEGUIMIENTO 2:
+
+Revisa que el diseño cumpla con la condición de modificar únicamente HTML y CSS.
+No agregues funciones nuevas ni cambios en JavaScript.
+
+
+PROMPT DE SEGUIMIENTO 3:
+
+Adapta el diseño para que sea responsive.
+El canvas, los botones y el panel de información deben verse correctamente en pantallas pequeñas.
