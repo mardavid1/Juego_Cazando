@@ -11,19 +11,19 @@ let comidaY = 0;
 const ALTO_GATO = 10;
 const ANCHO_GATO = 50;
 
-const ALTO_COMIDA = 20;
-const ANCHO_COMIDA = 20;
+const ALTO_COMIDA = 50;
+const ANCHO_COMIDA = 50;
 
 function iniciarJuego() {
     reiniciarJuego();
 }
 
 function graficarGato() {
-    graficarRectangulo(gatoX, gatoY, ANCHO_GATO, ALTO_GATO, 'brown');
+    graficarRectangulo(gatoX, gatoY, ANCHO_GATO, ALTO_GATO, 'pink');
 }
 
 function graficarComida() {
-    graficarRectangulo(comidaX, comidaY, ANCHO_COMIDA, ALTO_COMIDA, 'blue');
+    graficarRectangulo(comidaX, comidaY, ANCHO_COMIDA, ALTO_COMIDA, 'purple');
 }
 
 
@@ -128,7 +128,7 @@ function restarTiempo() {
     }
 
     if (tiempo == 0) {
-        alert("Game Over");
+        alert("FINAL");
         clearInterval(intervaloTiempo);
         juegoTerminado = true;
     }
@@ -160,4 +160,6 @@ function reiniciarJuego() {
 }
 
 
-
+function desparecerPersonaje(){
+    cxt.clearRect(gatoX,gatoY,ANCHO_GATO,ALTO_COMIDA);
+}
