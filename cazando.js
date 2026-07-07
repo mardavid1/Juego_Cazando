@@ -14,12 +14,6 @@ const ANCHO_GATO = 50;
 const ALTO_COMIDA = 20;
 const ANCHO_COMIDA = 20;
 
-// Variables del juego
-let puntaje = 0;
-let tiempo = 10;
-let intervaloTiempo;
-let juegoTerminado = false;
-
 function iniciarJuego() {
     reiniciarJuego();
 }
@@ -32,60 +26,57 @@ function graficarComida() {
     graficarRectangulo(comidaX, comidaY, ANCHO_COMIDA, ALTO_COMIDA, 'blue');
 }
 
-function graficarRectangulo(x, y, ancho, alto, color) {
-    cxt.fillStyle = color;
-    cxt.fillRect(x, y, ancho, alto);
+
+function graficarRectangulo(x,y,ancho,alto,color){
+    cxt.fillStyle=color;
+    cxt.fillRect(x,y,ancho,alto);
 }
 
-function limpiarCanva() {
-    cxt.clearRect(0, 0, canvas.width, canvas.height);
-}
-
-function actualizarPantalla() {
-    limpiarCanva();
-    graficarGato();
-    graficarComida();
+//Funcion limpiar canvas
+function limpiarCanva(){
+    cxt.clearRect(0,0,canvas.width,canvas.height);
 }
 
 function moverIzquierda() {
-    if (juegoTerminado) {
-        return;
-    }
-
     gatoX = gatoX - 10;
-    actualizarPantalla();
+    
+    limpiarCanva();
+    graficarGato();
+    graficarComida();
+
     detectarColision();
 }
 
 function moverDerecha() {
-    if (juegoTerminado) {
-        return;
-    }
-
     gatoX = gatoX + 10;
-    actualizarPantalla();
+
+    limpiarCanva();
+    graficarGato();
+    graficarComida();
+
     detectarColision();
 }
 
 function moverArriba() {
-    if (juegoTerminado) {
-        return;
-    }
-
     gatoY = gatoY - 10;
-    actualizarPantalla();
+
+    limpiarCanva();
+    graficarGato();
+    graficarComida();
+
     detectarColision();
 }
 
 function moverAbajo() {
-    if (juegoTerminado) {
-        return;
-    }
-
     gatoY = gatoY + 10;
-    actualizarPantalla();
+
+    limpiarCanva();
+    graficarGato();
+    graficarComida();
+
     detectarColision();
 }
+
 
 function detectarColision() {
     if (
@@ -98,12 +89,15 @@ function detectarColision() {
         mostrarEnSpan("puntos", puntaje);
 
         if (puntaje == 6) {
+            alert("¡Ganaste!");
             clearInterval(intervaloTiempo);
             juegoTerminado = true;
-            mostrarEnSpan("mensaje", "¡Ganaste!");
         } else {
             moverComidaAleatoria();
-            actualizarPantalla();
+
+            limpiarCanva();
+            graficarGato();
+            graficarComida();
         }
     }
 }
@@ -118,23 +112,29 @@ function mostrarEnSpan(id, valor) {
     componente.textContent = valor;
 }
 
+let puntaje=0; //Variable puntaje
+
+function actualizarPuntaje() {
+    mostrarEnSpan("puntos", puntaje);
+}
+
+let tiempo = 10; //Variable tiempo
+let intervaloTiempo; // Variable intervalo
+
 function restarTiempo() {
-    if (juegoTerminado) {
-        return;
+    if (tiempo > 0) {
+        tiempo = tiempo - 1;
+        mostrarEnSpan("tiempo", tiempo);
     }
 
-    tiempo = tiempo - 1;
-    mostrarEnSpan("tiempo", tiempo);
-
-    if (tiempo <= 0) {
-        tiempo = 0;
-        mostrarEnSpan("tiempo", tiempo);
-
+    if (tiempo == 0) {
+        alert("Game Over");
         clearInterval(intervaloTiempo);
         juegoTerminado = true;
-        mostrarEnSpan("mensaje", "Game Over");
     }
 }
+
+let juegoTerminado = false; // Juego terminado
 
 function reiniciarJuego() {
     clearInterval(intervaloTiempo);
@@ -146,13 +146,18 @@ function reiniciarJuego() {
     gatoX = (canvas.width - ANCHO_GATO) / 2;
     gatoY = (canvas.height - ALTO_GATO) / 2;
 
-    moverComidaAleatoria();
+    comidaX = canvas.width - ANCHO_COMIDA;
+    comidaY = canvas.height - ALTO_COMIDA;
 
     mostrarEnSpan("puntos", puntaje);
     mostrarEnSpan("tiempo", tiempo);
-    mostrarEnSpan("mensaje", "");
 
-    actualizarPantalla();
+    limpiarCanva();
+    graficarGato();
+    graficarComida();
 
     intervaloTiempo = setInterval(restarTiempo, 1000);
 }
+
+
+
